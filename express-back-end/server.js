@@ -10,6 +10,11 @@ App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json());
 App.use(Express.static("public"));
 
+// Heroku
+App.get('/', (req,res) => {
+  res.send("Hello World Herok Server")
+})
+
 App.get("/api/search", (req, res) => {
   const searchItem = req.query.query;
   Promise.all([
@@ -339,7 +344,7 @@ App.put("/api/messages", (req, res) => {
     });
 });
 
-App.listen(PORT, () => {
+App.listen(process.env.PORT || 3003, () => {
   // eslint-disable-next-line no-console
   console.log(
     `Express seems to be listening on port ${PORT} so that's pretty good 👍`
