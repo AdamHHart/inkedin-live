@@ -23,7 +23,7 @@ export default function ProfilePic(props) {
       first_user_id: Number(state.activeUser),
       second_user_id: props.userInfo.user_id,
     };
-    axios.put(`/api/friends`, friend).then(() => {});
+    axios.put(`https://inkedin.herokuapp.com/api/friends`, friend).then(() => {});
     localStorage.setItem("activeConversation", [
       friend.first_user_id,
       friend.second_user_id,

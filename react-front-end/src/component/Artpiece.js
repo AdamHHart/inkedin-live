@@ -33,7 +33,7 @@ export default function RecipeReviewCard(props) {
   console.log("AP props :::", props);
 
   useEffect(() => {
-    axios.get(`/api/artworks/${id}`).then((res) => {
+    axios.get(`https://inkedin.herokuapp.com/api/artworks/${id}`).then((res) => {
       setArtpiece(res.data.artwork[0]);
     });
   }, []);

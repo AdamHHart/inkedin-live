@@ -20,18 +20,18 @@ export default function Job(props) {
       first_user_id: props.activeUser,
       second_user_id: job.user_id,
     };
-    axios.put(`/api/friends`, friend).then(() => {});
+    axios.put(`https://inkedin.herokuapp.com/api/friends`, friend).then(() => {});
     localStorage.setItem("activeConversation", [
       friend.first_user_id,
       friend.second_user_id,
     ]);
-    history.push("/messages");
+    history.push("https://inkedin.herokuapp.com/messages");
   };
 
   const [job, setJob] = useState({});
 
   useEffect(() => {
-    axios.get(`/api/jobs/${id}`).then((res) => {
+    axios.get(`https://inkedin.herokuapp.com/api/jobs/${id}`).then((res) => {
       setJob(res.data.job[0]);
     });
   }, []);

@@ -23,7 +23,7 @@ export default function User(props) {
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get(`/api/users/${id}/artworks`).then((res) => {
+    axios.get(`https://inkedin.herokuapp.com/api/users/${id}/artworks`).then((res) => {
       setState({ ...state, portfolio: res.data.portfolio });
     });
   }, [state.showAdd, state.showEdit, state.artID, id]);
@@ -33,13 +33,13 @@ export default function User(props) {
   };
 
   const onCreate = (artwork) => {
-    axios.put(`/api/artworks`, artwork).then((res) => {
+    axios.put(`https://inkedin.herokuapp.com/api/artworks`, artwork).then((res) => {
       setState({ ...state, showAdd: false });
     });
   };
 
   const onDelete = (id) => {
-    axios.delete(`/api/artworks/${id}`).then(() => {
+    axios.delete(`https://inkedin.herokuapp.com/api/artworks/${id}`).then(() => {
       setState({ ...state, artID: id });
     });
   };
@@ -50,7 +50,7 @@ export default function User(props) {
   };
 
   const onEditSubmit = (art) => {
-    axios.put(`/api/artworks/${state.artID}`, art).then(() => {
+    axios.put(`https://inkedin.herokuapp.com/api/artworks/${state.artID}`, art).then(() => {
       setState({ ...state, showEdit: false });
     });
   };

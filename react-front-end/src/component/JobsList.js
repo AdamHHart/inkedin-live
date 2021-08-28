@@ -75,14 +75,14 @@ export default function BasicTable(props) {
   };
 
   const onDelete = (id) => {
-    axios.delete(`/api/jobs/${id}`).then(() => {
+    axios.delete(`https://inkedin.herokuapp.com/api/jobs/${id}`).then(() => {
       setUserJobs();
       setJobs();
     });
   };
 
   const onEditSubmit = (job) => {
-    axios.put(`/api/jobs/${jobId}`, job).then(() => {
+    axios.put(`https://inkedin.herokuapp.com/api/jobs/${jobId}`, job).then(() => {
       setJobs();
       setUserJobs();
       setEditShow(false);
@@ -90,7 +90,7 @@ export default function BasicTable(props) {
   };
 
   const onSubmit = (job) => {
-    axios.put(`/api/jobs`, job).then(() => {
+    axios.put(`https://inkedin.herokuapp.com/api/jobs`, job).then(() => {
       setJobs();
       setUserJobs();
       setShow(false);
