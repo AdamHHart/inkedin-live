@@ -11,8 +11,6 @@ module.exports = {
       database: "d53rhfchq6e6nd",
       port: "5432",
       ssl: process.env.DB_SSL,
-      uri: "postgres://vbcvsfkqqudldy:b827b5260545d30e1bf2522f11f7e2ae86410c31a0898de7c6ae22e598207c4e@ec2-3-218-71-191.compute-1.amazonaws.com:5432/d53rhfchq6e6nd",
-      cli: "heroku pg:psql postgresql-adjacent-17920 --app inkedin-db",
       // host     : process.env.DB_HOST,
       // user     : process.env.DB_USER,
       // password : process.env.DB_PASS,
